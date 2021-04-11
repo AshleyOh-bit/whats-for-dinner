@@ -1,16 +1,3 @@
-/* font-family: 'Roboto', sans-serif;
-
-COLORS
-teal - #0fb9b1;
-frosted white - rgba(225, 225, 225, .9);
-grey - #95a5a6;
-red - #ee5253
-
-*/
-/*
-* {
-  border: blue solid 1px
-} */
 
 @font-face {
   font-family: "Roboto";
@@ -63,6 +50,7 @@ h2 {
 h4 {
   font-size: 24px;
   font-style: italic;
+  margin-bottom: 0px;
 }
 
 button {
@@ -102,7 +90,6 @@ label {
   align-items: center;
 }
 
-
 .lets-cook {
   background-color: #0fb9b1;
   padding: 5px 50px 5px 50px;
@@ -113,29 +100,22 @@ label {
 }
 
 .cookpot-card {
-  /* border-color: red; */
   height: 300px;
   width: 500px;
-  display: inline-grid;
-  justify-items: center;
   text-align: center;
-/*   grid-auto-flow: dense; */
-/*   grid-gap: 1px; */
-/*   align-items: center; */
+  padding-top: 10%;
 }
 
-/* .directive {
-  font-size: 24px;
-  font-style: italic;
-} */
-
 .insert {
-  font-size: 32px;
+  font-size: 46px;
   padding-bottom: 25%;
   padding-top: 5px;
-/*   margin-left: 25% */
-/*   margin-bottom: 75% */
-/*   margin-top: 0x; */
+  margin-top: 0px;
+}
+
+.insert-meal {
+  font-size: 34px;
+  margin-top: 20px;
 }
 
 .hidden {

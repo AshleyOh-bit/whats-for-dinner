@@ -1,3 +1,4 @@
+//Data
 var sides = ["Miso Glazed Carrots", "Coleslaw", "Garden Salad", "Crispy Potatoes", "Sweet Potato Tots", "Coconut Rice", "Caeser Salad", "Shrimp Summer Rolls", "Garlic Butter Mushrooms", "Hush Puppies"];
 
 var mains = ["Spaghetti and Meatballs", "Pineapple Chicken", "Shakshuka", "Thai Yellow Curry", "Bibimbap", "Chicken Parmesean", "Butternut Squash Soup", "BBQ Chicken Burgers", "Ramen", "Empanadas", "Chicken Fried Rice", "Sheet Pan Fajitas", "Margarita Pizza"];
@@ -14,13 +15,13 @@ var letsCookButton = document.querySelector("#lets-cook");
 
 var cookpotImage = document.querySelector("#cookpot");
 
-var cookpotCard = document.querySelector("#cookpot-card")
+var cookpotCard = document.querySelector("#cookpot-card");
 
-//Event listeners
-letsCookButton.addEventListener("click", selectRandomDish)
+//Event Listeners
+letsCookButton.addEventListener("click", selectRandomDish);
 
 
-//Event handlers/functions
+//Event Handlers/Functions
 function preventDefault() {
   event.preventDefault()
 }
@@ -37,40 +38,37 @@ function displayCookpotCard() {
   cookpotCard.classList.remove("hidden");
 }
 
+function populateDish(dish) {
+  preventDefault();
+  hideCookpot();
+  displayCookpotCard();
+  cookpotCard.innerHTML = `<h4>You should make:</h4>
+        <p class="insert">${dish}!</p>`
+}
+
+function populateMeal(side, main, dessert) {
+  preventDefault();
+  hideCookpot();
+  displayCookpotCard();
+  cookpotCard.innerHTML = `<h4>You should make:</h4>
+        <p class="insert-meal">${main} with a side of ${side} and ${dessert} for dessert!</p>`
+}
+
 function selectRandomDish() {
-  var sideDish;
-  var mainDish;
-  var dessertDish;
-  var entireMeal;
+  var sideDish, mainDish, dessertDish, entireMeal;
   if (sideRadio.checked) {
-    preventDefault();
-    hideCookpot();
-    displayCookpotCard();
     sideDish = randomIndex(sides);
-    cookpotCard.innerHTML = `<h4>You should make:</h4>
-          <p class="insert">${sideDish}</p>`
+    populateDish(sideDish);
   } else if (mainRadio.checked) {
-    preventDefault();
-    hideCookpot();
-    displayCookpotCard();
     mainDish = randomIndex(mains);
-    cookpotCard.innerHTML = `<h4>You should make:</h4>
-          <p class="insert">${mainDish}</p>`
+    populateDish(mainDish);
   } else if (dessertRadio.checked) {
-    preventDefault();
-    hideCookpot();
-    displayCookpotCard();
     dessertDish = randomIndex(desserts);
-    cookpotCard.innerHTML = `<h4>You should make:</h4>
-          <p class="insert">${dessertDish}</p>`
+    populateDish(dessertDish);
   } else if (entireMealRadio.checked) {
-    preventDefault();
-    hideCookpot();
-    displayCookpotCard();
     sideDish = randomIndex(sides);
     mainDish = randomIndex(mains);
     dessertDish = randomIndex(desserts);
-    cookpotCard.innerHTML = `<h4>You should make:</h4>
-          <p class="insert">${mainDish} with a side of ${sideDish} and ${dessertDish} for dessert!</p>`
+    populateMeal(sideDish, mainDish, dessertDish);
   }
 }
