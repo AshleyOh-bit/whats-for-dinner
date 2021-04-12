@@ -2,8 +2,6 @@
 
 The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/dinner.html).
 
-# Whats for Dinner?
-
 ## Contributors:
 
 * Ashley O'Brien
